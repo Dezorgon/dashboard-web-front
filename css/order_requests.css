@@ -1,0 +1,19 @@
+@media (max-width: 940px) 
+{
+    .table td:nth-child(1):before
+    {
+        content: 'Имя';
+    }
+    .table td:nth-child(2):before
+    {
+        content: 'Телефон';
+    }
+    .table td:nth-child(3):before
+    {
+        content: 'Описание';
+    }
+    .table td:nth-child(4):before
+    {
+        content: 'Дата заказа';
+    }
+}

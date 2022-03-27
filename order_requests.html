@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/table.css">
+        <link rel="stylesheet" type="text/css" href="css/order_requests.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div id="bg-rect"></div>
+
+        <div class="container">
+            <div class="navbar">
+                <h2 class="navbar__title">Dashboard</h2>
+
+                <nav class="menu">
+                    <div class="menu__item_bg"></div> 
+                    <a class="menu__item" tabindex="1" href="/">
+                        <img class="menu__image" src="images/statistic.png" alt="">
+                        <span class="menu__title">Обзор</span>
+                    </a>        
+                    <a class="menu__item" tabindex="2" href="orders">
+                        <img class="menu__image" src="images/orders.png" alt="">
+                        <span class="menu__title">Заказы</span>
+                    </a>            
+                    <a class="menu__item menu__item_active" tabindex="3" href="order_requests">
+                        <img class="menu__image" src="images/request.png" alt="">
+                        <span class="menu__title">Заявки</span>
+                    </a>        
+                    <a class="menu__item menu__item_last" tabindex="4" id="logout-btn" href="login">
+                        <img class="menu__image" src="images/logout.png" alt="">
+                        <span class="menu__title">Выход</span>
+                    </a>                   
+                </nav>
+            </div>
+
+            <main class="main">
+                
+                <div class="card table-card">
+                    <table class="table">
+                        <thead class="table__head">
+                            <tr>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Описание</th>
+                                <th>Дата заявки</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr>
+                                <td><a href="#">Глеб</a></td>
+                                <td>385567594</td>
+                                <td>абоба</td>
+                                <td>1/2/2020</td>
+                                <td><div class="table__status table__status-paid">Paid</div></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Глеб</a></td>
+                                <td>385567594</td>
+                                <td>абоба</td>
+                                <td>1/2/2020</td>
+                                <td><div class="table__status table__status-unpaid">Unpaid</div></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Глеб</a></td>
+                                <td>385567594</td>
+                                <td>абоба</td>
+                                <td>1/2/2020</td>
+                                <td><div class="table__status table__status-gg">gg</div></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Глеб</a></td>
+                                <td>385567594</td>
+                                <td>абоба</td>
+                                <td>1/2/2020</td>
+                                <td><div class="table__status table__status-paid">Paid</div></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </main>
+
+        </div>
+
+    </body>
+
+
+    <script src="js/nav.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/order_requests.js"></script>
+</html>

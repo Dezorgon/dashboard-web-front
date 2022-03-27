@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div id="bg-rect"></div>
+
+        <div class="container">
+            <div class="navbar">
+                <h2 class="navbar__title">Dashboard</h2>
+
+                <nav class="menu">
+                    <div class="menu__item_bg"></div> 
+                    <a class="menu__item menu__item_active" tabindex="1" href="/">
+                        <img class="menu__image" src="images/statistic.png" alt="">
+                        <span class="menu__title">Обзор</span>
+                    </a>        
+                    <a class="menu__item" tabindex="2" href="orders">
+                        <img class="menu__image" src="images/orders.png" alt="">
+                        <span class="menu__title">Заказы</span>
+                    </a>            
+                    <a class="menu__item" tabindex="3" href="order_requests">
+                        <img class="menu__image" src="images/request.png" alt="">
+                        <span class="menu__title">Заявки</span>
+                    </a>        
+                    <a class="menu__item menu__item_last" tabindex="4" id="logout-btn" href="login">
+                        <img class="menu__image" src="images/logout.png" alt="">
+                        <span class="menu__title">Выход</span>
+                    </a>                   
+                </nav>
+            </div>
+
+            <main class="main">
+
+                <section class="statistic slider">
+                    <div class="card mini-card">
+                        <div class="mini-card__main">
+                            <h4 class="mini-card__title">Выручка за месяц</h4>
+                            <p class="mini-card__subtitle">$682</p>
+                        </div>
+                        <img class="mini-card__image" src="images/digital-money.png" alt="">
+                    </div>
+                    <div class="card mini-card">
+                        <div class="mini-card__main">
+                            <h4 class="mini-card__title">Кол-во клиентов</h4>
+                            <p class="mini-card__subtitle">321</p>
+                        </div>
+                        <img class="mini-card__image" src="images/user.png" alt="">
+                    </div>
+                    <div class="card mini-card mini-card_dark">
+                        <div class="mini-card__main">
+                            <h4 class="mini-card__title">Выручка</h4>
+                            <p class="mini-card__subtitle">$15 400</p>
+                        </div>
+                        <img class="mini-card__image" src="images/Vector 1.png" alt="">
+                    </div>
+                    <div class="card mini-card">
+                        <div class="mini-card__main">
+                            <h4 class="mini-card__title">Всего заказов</h4>
+                            <p class="mini-card__subtitle">203</p>
+                        </div>
+                        <img class="mini-card__image" src="images/order.png" alt="">
+                    </div>
+                </section>
+        
+                <section class="charts">
+                    <div class="card chart-card">
+                        <div class="chart-card__header">
+                            <h4 class="chart-card__title">Динамика заказов</h4>
+                            <select class="chart-card__select select" tabindex="5" name="period" id="period">
+                                <option value="week">7 дней</option>
+                                <option value="month">30 дней</option>
+                                <option value="year">Год</option>                 
+                            </select>
+                        </div>
+                        <div class="chart-card__chart-container">   
+                            <canvas id="period-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="chart-card__header">
+                            <h4 class="chart-card__title">Доля товаров</h4>
+                            <select class="chart-card__select select" tabindex="6" name="period" id="period">
+                                <option value="month">Месяц</option>
+                                <option value="year">Год</option>
+                            </select>
+                        </div>
+                        <div class="chart-card__chart-container">
+                            <canvas id="pie-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+    </body>
+
+
+    <script src="js/nav.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/slider.js"></script>
+</html>
