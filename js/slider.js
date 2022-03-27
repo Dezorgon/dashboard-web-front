@@ -4,8 +4,11 @@ slider.style.left = '0px';
 let x;
 let y;
 
+let currentItemNum = 0;
+
 let lastXDiff = 0;
 let xDiffSpeed = 0;
+
 
 function handleTouchStart(event)
 {
@@ -13,8 +16,6 @@ function handleTouchStart(event)
     x = firstTouch.clientX;
     y = firstTouch.clientY;
 }
-
-let currentItemNum = 0;
 
 function handleTouchMove(event)
 {
@@ -29,43 +30,38 @@ function handleTouchMove(event)
 
     if (Math.abs(xDiff) < Math.abs(yDiff))
     {
-        return
+        return;
     }
 
     slider.style.left = -currentItemNum * 270 + xDiff + 'px';  
+
     xDiffSpeed = xDiff - lastXDiff;
     lastXDiff = xDiff;
-}  
- 
+}
 
-async function handleTouchEnd(event)
+function handleTouchEnd(event)
 {
-    slider.style.transition = '.2s'
+    slider.style.transition = '.1s'
+
     const firstTouch = event.changedTouches[0];
     const x2 = firstTouch.clientX;
-    const y2 = firstTouch.clientY; 
 
     const xDiff = x2 - x;
-    const yDiff = y2 - y;
 
-    if (Math.abs(xDiff) < Math.abs(yDiff))
-    {
-        return
-    }
-
-    itemNumDiff = -Math.round((xDiff + 10 * (xDiffSpeed ** 1/2)) / 270);
+    itemNumDiff = -Math.round((xDiff + 50 * (xDiffSpeed ** 1/8)) / 270);
     if (currentItemNum + itemNumDiff <= 0)
     {
         currentItemNum = 0;
     }
-    else if (currentItemNum + itemNumDiff >= 3)
+    else if (currentItemNum + itemNumDiff >= slider.childElementCount - 1)
     {
-        currentItemNum = 3;
+        currentItemNum = slider.childElementCount - 1;
     }
     else 
     {
         currentItemNum += itemNumDiff;
     }
+
     slider.style.left = -currentItemNum * 270  + 'px';    
 }
 
