@@ -53,7 +53,7 @@ async function handleTouchEnd(event)
         return
     }
 
-    itemNumDiff = -Math.round((xDiff + 20 * (xDiffSpeed ** 1/2)) / 270);
+    itemNumDiff = -Math.round((xDiff + 10 * (xDiffSpeed ** 1/2)) / 270);
     if (currentItemNum + itemNumDiff <= 0)
     {
         currentItemNum = 0;
